@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container{
+    /* 网格布局 */
+    display: grid;  
+   /* 列数  repeat 4 次数  1fr 重复的值*/
+   grid-template-columns: repeat(4,1fr);
+  /* 空隙 */
+   grid-gap: 10px;
+   height: 100vh;
+}
+
+.container >div{
+   background-size: cover;
+   /*  不能设置不平铺 图片覆盖去的固定区域*/
+ background-attachment: fixed;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ transition: all 0.5s ease-in;
+}
+
+.container >div h2{
+    margin: 10px;
+}
+
+h2{
+    font-size: 45px;
+    font-weight: 300;
+}
+
+span{
+    font-size: 30px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.container >div:hover{
+ opacity: 0.7;
+ transform: scale(0.98);
+}
+
+.container>div:nth-of-type(1){
+    grid-column: 1/3;
+}
+
+.container>div:nth-of-type(6){
+    grid-column: 3/5;
+}
+.container>div:nth-of-type(9){
+    grid-column: 3/5;
+}
+
+.container>div:nth-of-type(10){
+    grid-column: 1/3;
+}
+
+.bg1{
+    background-image: url('../img//bg1.jpg');
+}
+
+.bg2{
+    background-image: url('../img//bg2.jpg');
+    color: #333;
+}
